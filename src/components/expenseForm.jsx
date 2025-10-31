@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { useExpenses } from "../context/ExpenseContext";
+import { useExpenses } from "../context/expenseContext";
 import dayjs from "dayjs";
 
 export default function ExpenseForm({ onClose, existing }) {

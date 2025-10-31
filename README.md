@@ -1,73 +1,84 @@
- Frontend (React + Vite)
-
-```markdown
 # 💰 Expense Tracker — Frontend (React + Vite)
 
-This is the **frontend client** of the Expense Tracker web app.  
-It provides a clean, responsive UI for users to manage and visualize their expenses with category, date, and search filters.
-
----
+This is the frontend client of the MERN Expense Tracker project.
+It provides a seamless, responsive interface for managing and visualizing expenses, supporting authentication, filtering, and summaries — all built using modern React and Tailwind practices.
 
 ## 🚀 Tech Stack
-- **React.js (Vite)** — Fast build tool for modern frontend apps
-- **Tailwind CSS** — Modern utility-first styling
-- **Axios** — HTTP client for API calls
-- **React Router DOM** — Routing and navigation
-- **Lucide React** — Modern icon set
-- **Day.js** — Lightweight date library for filtering and formatting
-- **Context API** — For Auth, Expenses, and Theme state management
 
----
+React.js (Vite) — Lightning-fast frontend build system
+
+Tailwind CSS — Utility-first styling framework
+
+Axios — For secure API requests
+
+React Router DOM — Client-side routing and navigation
+
+Lucide React — Modern icon components
+
+Day.js — Lightweight date management library
+
+React Context API — State management for Authentication and Expenses
 
 ## 🧩 Folder Structure
-┣ src/
-┃ ┣ api/ # Axios instance (baseURL)
-┃ ┣ components/ # Reusable UI components
-┃ ┣ context/ # Auth & Expense providers
-┃ ┣ pages/ # Home, Dashboard, Login, Register
-┃ ┣ App.jsx
-┃ ┗ main.jsx
-┣ index.html
-┣ package.json
-┗ README.md
-
-
----
+ ┣ src/
+ ┃ ┣ api/             # Axios instance and baseURL configuration
+ ┃ ┣ components/      # Navbar, Forms, Expense List, Summary Cards, etc.
+ ┃ ┣ context/         # Auth and Expense context providers
+ ┃ ┣ pages/           # Home, Dashboard, Login, Register
+ ┃ ┣ App.jsx          # Main route and layout setup
+ ┃ ┗ main.jsx         # React root entry point
+ ┣ index.html
+ ┣ package.json
+ ┗ README.md
 
 ## ⚙️ Setup Instructions
+1️⃣ Navigate to the Frontend Folder
+cd expense-tracker-frontend
 
-### 1️⃣ Navigate to Frontend Folder
-```bash
-cd expense-tracker/frontend
 2️⃣ Install Dependencies
 npm install
 
-3️⃣ Configure API URL
+3️⃣ Configure Environment Variables
 
-Create a .env file inside frontend/ with:
+Create a .env file in the frontend/ directory:
 
 VITE_API_URL=http://localhost:5000/api
-
-
-Change the URL to your deployed backend when hosted online.
 
 4️⃣ Start the Development Server
 npm run dev
 
-Features
-
-✅ User Authentication (Login & Register)
-✅ JWT Token Management (stored securely in localStorage)
-✅ Add, Edit, Delete Expenses
-✅ Filter by Category, Date Range, and Title
-✅ Total, Monthly, and Category-wise summaries
-✅ Responsive Layout (works on all screen sizes)
-✅ Secure Logout (clears token and redirects to Home)
-
+Core Features
+Feature	Description
+🧾 Expense CRUD	Add, edit, delete, and view expenses
+🔐 User Authentication	Login and Register with JWT support
+🕵️‍♀️ Smart Filtering	Filter by category, date range, and search keywords
+💹 Expense Insights	Category-wise and monthly summaries
+💻 Responsive Design	Works seamlessly across devices
+🚪 Secure Logout	Clears token and redirects to home
+💡 Clean UI	Gradient styling, modern cards, and smooth transitions
 🔐 Authentication Flow
 
-On successful login, JWT token is saved in localStorage.
+User registers or logs in → JWT token received from backend.
 
-Protected routes (Dashboard) verify token before loading.
+Token is stored in localStorage for session persistence.
 
-On logout, token is cleared and user is redirected to Home.
+Protected pages (Dashboard) check token validity before rendering.
+
+On logout, token and user info are cleared → redirects to Home.
+
+🧩 Context Overview
+🔸 Auth Context
+
+Handles login, register, and logout actions.
+Stores user info and token in localStorage.
+
+🔸 Expense Context
+
+Manages expense data fetched from backend API.
+Supports dynamic filtering:
+
+Category filter
+
+Date range (from and to)
+
+Search keyword (case-insensitive)

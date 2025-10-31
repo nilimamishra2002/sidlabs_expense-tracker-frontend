@@ -34,7 +34,7 @@ export default function Home() {
       <main className="flex-grow flex flex-col items-center justify-center px-6 py-12">
         <div className="text-center max-w-2xl mb-12">
           <h1 className="text-5xl font-extrabold bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400 text-transparent bg-clip-text mb-4">
-            Manage Your Finances Like a Top 1% Developer
+            Manage Your Finances Like a Pro
           </h1>
 
           {isLoggedIn ? (
